@@ -41,7 +41,8 @@ TestPlan.csv	Defines objectives, scope, and approach
 TestCases.csv	Test cases including TC ID, endpoint, method, expected status, and body
 TestScenarios.csv	Derived scenarios for all API operations
 TestExecutionReport.csv	Pass/Fail results for each test case
-Screenshots/	Evidence of executed API requests
+All executed API requests and responses are captured as screenshots 
+Traceability Matrix is provided as a PDF  showing requirements, test scenarios, test cases, execution status, and notes.
 
 
 Conclusion
