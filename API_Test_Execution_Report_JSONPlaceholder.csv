@@ -1,0 +1,11 @@
+ TC ID, Status Code, Actual Result, Pass/Fail
+TC_Get01,200,Response returned all users successfully with status 200.,Pass
+TC_Get_02,200,Response returned user details for ID 1 with status 200.,Pass
+TC_Get_03,404,Response returned “{}” or empty body with status 404 for invalid ID.,Pass
+TC_Post_04,201,"New post created successfully; response body contains title, body, userId, and generated id.",Pass
+TC_Post_05,201(Mock Behavior),Post was created successfully even with missing fields because JSONPlaceholder is a mock API and does not perform server-side validation.,Pass
+TC_Put_06,200(Mock Behavior),Data was returned as sent because JSONPlaceholder is a mock API and does not persist updates.,Pass
+TC_Put_07,200(Mock Behavior),API returned 200 OK even with empty body; no data updated (mock behavior).,Pass
+TC_Del_08,200(Mock Behavior),Post deleted successfully (mock API),Pass
+TC_Del_09,200(Mock Behavior),"Post does not exist, but mock API still returns 200 OK",Pass
+TC_Del_10,200(Mock Behavior),"Post already deleted, API still returns 200 OK (mock behavior)",Pass
