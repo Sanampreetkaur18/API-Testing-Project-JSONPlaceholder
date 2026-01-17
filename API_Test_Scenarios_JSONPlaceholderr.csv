@@ -1,0 +1,11 @@
+Scenario ID,API,Method,Scenario Description
+SC_01,/users,GET,Verify fetching all posts
+SC_02,/users/1,GET,Verify fetching single post
+SC_03,/users/999,GET,Verify fetching a user by invalid ID returns 404 and empty body
+SC_04,/posts,POST,Verify creating a new post
+SC_05,/posts,POST,Verify post creation with missing fields
+SC_06,/posts/1,PUT,Verify updating a post
+SC_07,/posts/1,PUT,Verify updating a post with empty body
+SC_08,/posts/1,DELETE,Verify deleting a post
+SC_09,/posts/9999,DELETE,Verify delete non-existing post
+SC_10,/posts/1,DELETE,Verify deleting an already deleted post
