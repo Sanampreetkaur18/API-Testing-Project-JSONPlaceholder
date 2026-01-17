@@ -1,14 +1,14 @@
-TC ID,Scenario ID,Method,Description,Endpoint,Expected Status,Result
+TC ID,Scenario ID,Method,Description,Endpoint,Body,Expected Status,Result
 TC_Get_01,SC_01,GET,"Get all users
-",/users,200 OK,Response returned all users successfully with status 200.
-TC_Get_02,SC_02,GET,Get user by valid ID,/users/1,200 OK,Response returned user details for ID 1 with status 200.
+",/users,,200 OK,Response returned all users successfully with status 200.
+TC_Get_02,SC_02,GET,Get user by valid ID,/users/1,,200 OK,Response returned user details for ID 1 with status 200.
 TC_Get_03,SC_03,GET,"
-Get user by invalid ID",/users/999,"404 Not Found
+Get user by invalid ID",/users/999,"{""title"":""My Post"",""body"":""Post body"",""userid"":1}","404 Not Found
 ",Response returned “{}” or empty body with status 404 for invalid ID.
-TC_Post_04,SC_04,POST,Create new post with valid data,/posts,201 Created,"New post created successfully; response body contains title, body, userId, and generated id."
-TC_Post_05,SC_05,POST,Create post with missing fields,/posts,201 Created(Mock Behavior),API returned 201 Created even with missing fields; response contains only provided fields + id (mock behavior).
-TC_Put_06,SC_06,PUT,Update post with valid data,/posts/1,200 OK,"Post updated successfully; response body shows updated title, body, userId, and id."
-TC_Put_07,SC_07,PUT,Update post with empty body,/posts/1,200 OK(Mock Behavior),API returned 200 OK even with empty body; no data updated (mock behavior).
-TC_Del_08,SC_08,DELETE,Delete post with valid ID,/posts/1,200 OK,Post deleted successfully; response body empty {}.
-TC_Del_09,SC_09,DELETE,Delete post with invalid ID,/posts/9999,200 OK(Mock Behavior),API returned 200 OK even though ID does not exist (mock behavior).
-TC_Del_10,SC_10,DELETE,Delete already deleted post,/posts/1,200 OK(Mock Behavior),API returned 200 OK even for already deleted post (mock behavior).
+TC_Post_04,SC_04,POST,Create new post with valid data,/posts,"{""title"":""My Post""}",201 Created,"New post created successfully; response body contains title, body, userId, and generated id."
+TC_Post_05,SC_05,POST,Create post with missing fields,/posts,"{""title"":""Updated Title"",""body"":""Updated body"",""userid"":1}",201 Created(Mock Behavior),API returned 201 Created even with missing fields; response contains only provided fields + id (mock behavior).
+TC_Put_06,SC_06,PUT,Update post with valid data,/posts/1,{},200 OK,"Post updated successfully; response body shows updated title, body, userId, and id."
+TC_Put_07,SC_07,PUT,Update post with empty body,/posts/1,,200 OK(Mock Behavior),API returned 200 OK even with empty body; no data updated (mock behavior).
+TC_Del_08,SC_08,DELETE,Delete post with valid ID,/posts/1,,200 OK,Post deleted successfully; response body empty {}.
+TC_Del_09,SC_09,DELETE,Delete post with invalid ID,/posts/9999,,200 OK(Mock Behavior),API returned 200 OK even though ID does not exist (mock behavior).
+TC_Del_10,SC_10,DELETE,Delete already deleted post,/posts/1,,200 OK(Mock Behavior),API returned 200 OK even for already deleted post (mock behavior).
